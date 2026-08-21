@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design &amp; Development · Game Leaderboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="badge">🏆 Very Office League</div>
+    <h1>Cross-Functional Synergy Sync</h1>
+    <p class="subtitle">The very official (and highly competitive) games leaderboard</p>
+
+    <div class="stat-strip" id="statStrip">
+      <!-- Filled by JS -->
+    </div>
+  </header>
+
+  <main>
+    <!-- Champions podium -->
+    <section class="podium-section">
+      <h2 class="section-title">Top Champions</h2>
+      <div class="podium" id="podium">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <!-- Full standings -->
+    <section class="standings-section">
+      <h2 class="section-title">Standings</h2>
+      <div class="standings" id="standings">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <!-- History timeline -->
+    <section class="history-section">
+      <h2 class="section-title">Game History</h2>
+      <p class="section-hint">Click on each to learn more</p>
+      <div class="timeline" id="timeline">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
