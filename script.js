@@ -1,9 +1,10 @@
 
 // A palette used to give each player a consistent, colorful avatar.
+// ACAD palette — kept light enough that dark avatar initials stay readable.
 const AVATAR_COLORS = [
-  "#ffd166", "#06d6a0", "#4cc9f0", "#ef476f",
-  "#b5179e", "#f8961e", "#90be6d", "#577590",
-  "#f9c74f", "#f3722c",
+  "#6699cf", "#78c4ab", "#eec899", "#f2a486",
+  "#5d9d93", "#7db7ea", "#f68d2e", "#9ec0d4",
+  "#c6e0de", "#f9bd7e",
 ];
 
 // Pick a stable color for a name (same name -> same color every time).

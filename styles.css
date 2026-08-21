@@ -1,18 +1,21 @@
 :root {
-  --bg: #0f1226;
-  --bg-2: #161a3a;
+  /* ACAD palette */
+  --bg: #0e1934;          /* acad-blue1 / primary-500 */
+  --bg-2: #163f6c;        /* acad-blue2 */
   --card: rgba(255, 255, 255, 0.06);
-  --card-border: rgba(255, 255, 255, 0.12);
-  --text: #eef0ff;
-  --muted: #a4a9d4;
-  --accent: #ffd166;
-  --accent-2: #06d6a0;
-  --accent-3: #ef476f;
-  --accent-4: #4cc9f0;
-  --gold: #ffd166;
-  --silver: #c9d1e8;
-  --bronze: #e59866;
-  --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  --card-border: rgba(255, 255, 255, 0.14);
+  --text: #f3f7fa;        /* acad-primary-0 */
+  --muted: #9ec0d4;       /* acad-secondary-250 */
+  --accent: #eec899;      /* acad-yellow1 */
+  --accent-rgb: 238, 200, 153;
+  --accent-2: #78c4ab;    /* acad-green3 */
+  --accent-3: #ce6042;    /* acad-orange1 */
+  --accent-4: #6699cf;    /* acad-blue3 / misc-blue-01 */
+  --accent-4-rgb: 102, 153, 207;
+  --gold: #eec899;        /* acad-yellow1 */
+  --silver: #b8b8bb;      /* acad-gray2 */
+  --bronze: #ce6042;      /* acad-orange1 */
+  --shadow: 0 20px 50px rgba(4, 6, 12, 0.45);
 }
 
 * {
@@ -25,8 +28,8 @@ body {
   font-family: "Inter", system-ui, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(1200px 600px at 15% -10%, #24306b 0%, transparent 55%),
-    radial-gradient(1000px 500px at 100% 0%, #3a1d55 0%, transparent 50%),
+    radial-gradient(1200px 600px at 15% -10%, #1a628b 0%, transparent 55%),
+    radial-gradient(1000px 500px at 100% 0%, #42757c 0%, transparent 50%),
     linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
   min-height: 100vh;
   overflow-x: hidden;
@@ -70,9 +73,9 @@ body {
   display: inline-block;
   font-family: "Fredoka", sans-serif;
   font-weight: 600;
-  background: rgba(255, 209, 102, 0.15);
+  background: rgba(var(--accent-rgb), 0.15);
   color: var(--accent);
-  border: 1px solid rgba(255, 209, 102, 0.35);
+  border: 1px solid rgba(var(--accent-rgb), 0.4);
   padding: 8px 18px;
   border-radius: 999px;
   font-size: 0.9rem;
@@ -84,7 +87,7 @@ body {
   font-weight: 700;
   font-size: clamp(2.2rem, 6vw, 4rem);
   line-height: 1.05;
-  background: linear-gradient(90deg, #fff 0%, #b9c0ff 60%, var(--accent) 100%);
+  background: linear-gradient(90deg, #fff 0%, #d6e8f2 60%, var(--accent) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -196,7 +199,7 @@ main {
   font-family: "Fredoka", sans-serif;
   font-weight: 700;
   font-size: 1.6rem;
-  color: #10122a;
+  color: #0e1934;
 }
 .podium-card .name {
   font-family: "Fredoka", sans-serif;
@@ -211,14 +214,14 @@ main {
 
 .podium-card.rank-1 {
   transform: scale(1.06);
-  border-color: rgba(255, 209, 102, 0.5);
-  box-shadow: 0 20px 50px rgba(255, 209, 102, 0.2);
+  border-color: rgba(var(--accent-rgb), 0.55);
+  box-shadow: 0 20px 50px rgba(var(--accent-rgb), 0.22);
 }
 .podium-card.rank-1:hover { transform: scale(1.06) translateY(-6px); }
 
-.rank-1 .avatar { background: linear-gradient(135deg, #ffe29a, var(--gold)); }
-.rank-2 .avatar { background: linear-gradient(135deg, #eef1fb, var(--silver)); }
-.rank-3 .avatar { background: linear-gradient(135deg, #f6c79a, var(--bronze)); }
+.rank-1 .avatar { background: linear-gradient(135deg, #fce8bb, var(--gold)); }
+.rank-2 .avatar { background: linear-gradient(135deg, #efefef, var(--silver)); }
+.rank-3 .avatar { background: linear-gradient(135deg, #f2a486, var(--bronze)); }
 
 @keyframes rise {
   from { opacity: 0; transform: translateY(24px); }
@@ -262,7 +265,7 @@ main {
   place-items: center;
   font-family: "Fredoka", sans-serif;
   font-weight: 700;
-  color: #10122a;
+  color: #0e1934;
 }
 .standing-row .player-name {
   font-weight: 600;
@@ -305,7 +308,7 @@ main {
 
 /* Interactive cards (those with a recap) */
 .timeline-card.has-recap { cursor: pointer; }
-.timeline-card.has-recap:hover { border-color: rgba(76, 201, 240, 0.45); }
+.timeline-card.has-recap:hover { border-color: rgba(var(--accent-4-rgb), 0.5); }
 .timeline-card.has-recap:focus-visible {
   outline: 2px solid var(--accent-4);
   outline-offset: 2px;
@@ -341,8 +344,8 @@ main {
 .timeline-card .date-chip {
   flex-shrink: 0;
   text-align: center;
-  background: rgba(76, 201, 240, 0.12);
-  border: 1px solid rgba(76, 201, 240, 0.3);
+  background: rgba(var(--accent-4-rgb), 0.14);
+  border: 1px solid rgba(var(--accent-4-rgb), 0.34);
   border-radius: 12px;
   padding: 10px 14px;
   min-width: 76px;
@@ -375,8 +378,8 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255, 209, 102, 0.14);
-  border: 1px solid rgba(255, 209, 102, 0.3);
+  background: rgba(var(--accent-rgb), 0.16);
+  border: 1px solid rgba(var(--accent-rgb), 0.32);
   color: var(--accent);
   padding: 4px 12px;
   border-radius: 999px;
