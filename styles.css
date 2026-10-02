@@ -154,13 +154,20 @@ main {
 /* ---------- Podium ---------- */
 .podium {
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 16px;
+}
+/* Each rank is its own centered row (1st on top, then 2nd, then 3rd). */
+.podium-tier {
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
 }
 .podium-card {
-  flex: 1 1 200px;
+  flex: 0 1 220px;
   max-width: 240px;
   background: var(--card);
   border: 1px solid var(--card-border);

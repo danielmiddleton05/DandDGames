@@ -82,42 +82,36 @@ function renderStats(results, leaderboard) {
     .join("");
 }
 
-function arrangeForPodium(top) {
-  const golds = top.filter((p) => p.rank === 1);
-  const rest = top.filter((p) => p.rank !== 1);
-
-  const left = [];
-  const right = [];
-  rest.forEach((p, i) => {
-    (i % 2 === 0 ? left : right).push(p);
-  });
-
-
-  return [...left.reverse(), ...golds, ...right];
-}
-
 /* ---------- Podium (top 3 ranks) ---------- */
 function renderPodium(leaderboard) {
   const medalByRank = { 1: "🥇", 2: "🥈", 3: "🥉" };
   const classByRank = { 1: "rank-1", 2: "rank-2", 3: "rank-3" };
 
-  const top = leaderboard.filter((p) => p.rank <= 3);
-  const arranged = arrangeForPodium(top);
-
-  document.getElementById("podium").innerHTML = arranged
-    .map(
-      (p, i) => `
-      <div class="podium-card ${classByRank[p.rank]}" style="animation-delay:${i * 0.08}s">
+  // One markup card for a single player.
+  const cardHtml = (p, delay) => `
+      <div class="podium-card ${classByRank[p.rank]}" style="animation-delay:${delay * 0.08}s">
         <span class="rank-num">${p.tie ? "T-" : "#"}${p.rank}</span>
         <div class="medal">${medalByRank[p.rank]}</div>
         <div class="avatar">${initials(p.name)}</div>
         <div class="name">${p.name}</div>
         <div class="wins">${p.wins} ${p.wins === 1 ? "win" : "wins"}${
-        p.tie ? " · tie" : ""
-      }</div>
-      </div>`
-    )
+    p.tie ? " · tie" : ""
+  }</div>
+      </div>`;
+
+  // Build a centered row per rank: 1st on top, then 2nd, then 3rd. Anyone
+  // ranked 4th or lower is left out of Top Champions entirely.
+  let delay = 0;
+  const tiers = [1, 2, 3]
+    .map((rank) => {
+      const players = leaderboard.filter((p) => p.rank === rank);
+      if (players.length === 0) return "";
+      const cards = players.map((p) => cardHtml(p, delay++)).join("");
+      return `<div class="podium-tier tier-${rank}">${cards}</div>`;
+    })
     .join("");
+
+  document.getElementById("podium").innerHTML = tiers;
 }
 
 /* ---------- Full standings ---------- */
