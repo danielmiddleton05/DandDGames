@@ -1,5 +1,6 @@
 
 const GAME_RESULTS = [
+  { date: "Oct 2, 2026",  game: "Golf", winners: ["Daniel"] },
   { date: "Sept 18, 2026",  game: "Bank", winners: ["Nick", "Josh", "Makailey"] },
   { date: "Sept 4, 2026",  game: "Skull King", winners: ["Nina"] },
   { date: "Sept 2, 2026",  game: "Bank", winners: ["Crosby"] },
@@ -20,4 +21,6 @@ const GAME_HISTORY = {
     "After an excruciating delay due to 'competing room priorities', the match was relocated to the breakroom. Hayden called an audial, introducing a new title to the roster: Skull King. What followed was pure dynamic chaos. We saw lead changes every single round, with players flying high only to completely implode five minutes later. But in the final stretch, Nina delivered the ultimate clutch play, snatching victory at the absolute last second.",
     "Sept 18, 2026":
     "In a rare three-way split, Makailey, Josh, and Nick each walked away with a game to their name. The night's defining feature, however, was an identity crisis for the ages: in the game Nick won, 'Nick' was in fact Hayden, while Hayden was playing as Nick, a logistical nightmare that turned scorekeeping into a full-blown cryptography exercise. Somehow Kolene kept the entire charade straight, and for that she deserves a medal of her own. As has become tradition, Hayden rolled a miraculously, statistically significant number of 7's, with Kolene trailing close behind in a respectable second for sevens of her own. The catch: between the two of them, those sevens kept the scores firmly suppressed all night, so no one ever climbed to any dizzying heights. Not the most thrilling outing on record, but a victory split three ways is still a victory.",
+    "Oct 2, 2026":
+    "A leisurely game of Golf was played, ultimately won by Daniel. Only 3 of the 9 rounds were played, so the solidity of this victory is very much up for question. Though Stacee was a new player, she did surprisingly well, landing comfortably in the mid-range. Steven staged a last-minute scramble (and caught a couple of lucky draws) to pull himself out of last place, leaving the last-place honor to be hotly contested between Nina and Kolene. Ultimately, Nina claimed that last place spot. In an unexpected turn of events, a bitter rivalry erupted between Hayden and Will, with cards traded and discarded purely out of spite.",
 };
